@@ -2,14 +2,21 @@ import Vue  from 'vue';
 import Vuex from 'vuex';
 // import lodash from 'lodash'
 
-import events from './models/events'
-import community from './models/community'
+import school from './models/School'
+import address from './models/Address'
+import events from './models/Events'
+import gallery from './models/Gallery'
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   modules : {
+    school,
+    address,
     events,
-    community
+    gallery,
+  },
+  mutations : {
+
   }
 });
