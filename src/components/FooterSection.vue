@@ -23,7 +23,7 @@
      <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
       <!-- logo -->
       <router-link class="logo-footer  mb-4" to="/">
-       <img class="img-fluid" src="images/prima-logo.png" alt="logo"><!--FIXME put real logo here-->
+       <img class="img-fluid" src="images/prima-logo.png" alt="logo">
        <h4 class="text-white ml-2 d-inline"><span class="text-white">Prima</span><span class="clr-pri"> Academy</span></h4>
       </router-link>
       <ul class="list-unstyled">
