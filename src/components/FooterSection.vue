@@ -22,10 +22,9 @@
     <div class="row">
      <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
       <!-- logo -->
-      <router-link class="logo-footer" to="/">
-<!--       <img class="img-fluid mb-4" src="images/logo.png" alt="logo">&lt;!&ndash;FIXME put real logo here&ndash;&gt;-->
-       badge here
-       <h4 class="text-white mb-5"><span class="text-white">Prima</span><span class="clr-pri"> Academy</span></h4>
+      <router-link class="logo-footer  mb-4" to="/">
+       <img class="img-fluid" src="images/prima-logo.png" alt="logo"><!--FIXME put real logo here-->
+       <h4 class="text-white ml-2 d-inline"><span class="text-white">Prima</span><span class="clr-pri"> Academy</span></h4>
       </router-link>
       <ul class="list-unstyled">
        <li class="mb-2">{{address.location}}</li>

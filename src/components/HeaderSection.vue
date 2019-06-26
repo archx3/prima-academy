@@ -39,11 +39,8 @@
    <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light p-0">
      <a class="navbar-brand" href="/">
-      <!-- <img src="images/logo.png" alt="logo">-->
-      <span class="text-white">badge here</span>
-      <h2 class="section-title">
-      <span class="text-white">Prima</span><span class="clr-pri"> Academy</span>
-     </h2>
+       <img src="images/prima-logo.png" alt="logo">
+<!--      <h2 class="section-title"><span class="text-white">Prima</span><span class="clr-pri"> Academy</span></h2>-->
      </a>
      <!--collapsing-->
      <button class="navbar-toggler rounded-0" :class="{collapsed : !mobNav}" @click="mobNav = !mobNav"
