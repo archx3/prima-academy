@@ -15,7 +15,7 @@
       :cols="{default: 3, '1000': 3, '700': 2, '400': 1}"
       :gutter="{default: '0', 700: '0'}">
       <div v-for="(gallerySet, i) in gallerySets" :key="i" class="col-lg-12 mb-5 gallery-set">
-       <div class="card rounded-2 hover-shadow">
+       <div class="card rounded-0 hover-shadow">
         <div class="card-img position-relative">
          <router-link :to="`/gallery/${i}/${gallerySet.name.toLocaleLowerCase()}`">
            <img class="card-img-top rounded-0" :src="`/images/gallery/${gallerySet.dir_name}/${gallerySet.thumbnail}`" alt="event thumb">
@@ -26,7 +26,7 @@
          <!-- location -->
          <!--        <p><i class="ti-location-pin text-primary mr-2"></i></p>-->
          <router-link :to="`/gallery/${i}/${gallerySet.name.toLocaleLowerCase()}`">
-          <h4 class="card-title">{{gallerySet.name}}</h4>
+          <h4 class="card-title mb-0 font-weight-light">{{gallerySet.name}}</h4>
          </router-link>
         </div>
        </div>

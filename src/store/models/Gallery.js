@@ -66,8 +66,8 @@ export default {
         dir_name : 'excursion',
         pics : [
           { link : 'IMG_0433.JPG', title : '' },
-          { link : 'IMG_0433.JPG', title : '' },
-          { link : 'IMG_0433.JPG', title : '' },
+          { link : 'IMG_0514.JPG', title : '' },
+          { link : 'IMG_0543.JPG', title : '' },
         ],
         thumbnail : 'IMG_0433.JPG'
       },

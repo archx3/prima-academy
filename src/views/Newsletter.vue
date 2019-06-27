@@ -1,20 +1,10 @@
 <template>
  <div id='app-'>
   <!-- header -->
-  <header-section/>
+  <header-section :title="pageTitle"/>
   <!-- /header -->
   <!-- page title -->
-  <section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
-   <div class="container">
-    <div class="row">
-     <div class="col-md-8">
-      <ul class="list-inline custom-breadcrumb">
-       <li class="list-inline-item"><a class="h2 text-primary font-secondary">Newsletter</a></li>
-      </ul>
-     </div>
-    </div>
-   </div>
-  </section>
+  <page-title-section :page-title="pageTitle" :url="this.$route" :background="'/images/about/about-page-n.png'"/>
   <!-- /page title -->
 
   <!-- notice details -->
@@ -61,7 +51,9 @@ export default {
   components : {},
   props : [],
   data () {
-    return {}
+    return {
+      pageTitle : 'Newsletter'
+    }
   },
   methods : {},
   computed : {}

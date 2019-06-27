@@ -22,11 +22,11 @@
      <div class="col-lg-8 text-center text-lg-right">
       <ul class="list-inline">
        <li class="list-inline-item">
-        <a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal"
+        <a class="text-uppercase btn-primary text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal"
            data-target="#loginModal">login to Portal</a>
        </li>
        <li class="list-inline-item">
-        <a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal"
+        <a class="text-uppercase btn-primary text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal"
            data-target="#signupModal">Enroll</a>
        </li>
       </ul>
@@ -35,12 +35,12 @@
    </div>
   </div>
   <!-- navbar -->
-  <div class="navigation w-100" :class="{'nav-bg' : activateShortNav}">
+  <div class="navigation w-100 nav-gb" :class="{'nav-bg' : activateShortNav}">
    <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light p-0">
-     <a class="navbar-brand" href="/">
-       <img src="images/prima-logo.png" alt="logo">
-<!--      <h2 class="section-title"><span class="text-white">Prima</span><span class="clr-pri"> Academy</span></h2>-->
+     <a class="navbar-brand d-flex" href="/">
+       <img src="/images/prima-logo.png" alt="logo">
+      <h2 class="section-title d-inline"><span class="text-white">Prima</span><span class="clr-pri"> Academy</span></h2>
      </a>
      <!--collapsing-->
      <button class="navbar-toggler rounded-0" :class="{collapsed : !mobNav}" @click="mobNav = !mobNav"
@@ -54,7 +54,7 @@
        <li v-for="(link, index) in navLinks" :key="index" class="nav-item"
            :class="{active : activeLink === link.title, 'dropdown view' : link.children !== undefined}">
         <router-link class="nav-link" :to="link.target">
-         {{link.title}} <span v-if="link.children" class="ti-arrow-down"></span>
+         {{link.title}} <span v-if="link.children" class="ti-angle-down"></span>
         </router-link>
 
         <div v-if="link.children !== undefined" class="dropdown-menu show" aria-labelledby="navbarDropdown">
@@ -75,6 +75,11 @@ import { mapGetters } from 'vuex';
 
 export default {
   name    : 'header-section',
+  props : {
+    title : {
+      default : ''
+    }
+  },
   data () {
     return {
       activateShortNav: false,
@@ -94,10 +99,6 @@ export default {
             {
               title : 'Management Team',
               target: '/management-team'
-            },
-            {
-              title : 'Awards & Achievements',
-              target: '#awards'
             }
           ]
         },
@@ -105,10 +106,6 @@ export default {
           title   : 'Information',
           target  : '#',
           children: [
-            {
-              title : 'Newsletter',
-              target: '/newsletter'
-            },
             {
               title : 'Class Timetables',
               target: '#'
@@ -118,9 +115,17 @@ export default {
               target: '#'
             },
             {
+              title : 'Events',
+              target: '/events'
+            },
+            {
+              title : 'Newsletter',
+              target: '/newsletter'
+            },
+            {
               title : 'e School Report',
               target: '#'
-            }
+            },
           ]
         },
         {
@@ -131,10 +136,6 @@ export default {
           title : 'Gallery',
           target: '/gallery',
         },
-        {
-          title : 'Blog',
-          target: '#',
-        }
       ],
       activeLink : '',
       mobNav : false
@@ -154,7 +155,9 @@ export default {
     }
   },
   mounted () {
-    window.addEventListener('scroll', this.handleNavScroll)
+    window.addEventListener('scroll', this.handleNavScroll);
+    console.log(document.title, 'dtt', this.title);
+    if (this.title) { document.title += ` | ${this.title}` }
   }
 }
 </script>
@@ -171,4 +174,10 @@ export default {
  .collapsing-enter, .collapsing-leave-to /* .fade-leave-active below version 2.1.8 */ {
   height:0;
  }
+ h2.section-title{
+  margin: auto;
+  margin-left: 10px;
+ }
+
+
 </style>

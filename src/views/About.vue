@@ -1,33 +1,21 @@
 <template>
   <div class="about">
     <!-- header -->
-    <header-section/>
+    <header-section :title="pageTitle"/>
     <!-- /header -->
     <!-- page title -->
-    <section class="page-title-section overlay" :v-css="{backgroundImage : '/images/backgrounds/page-title.jpg'}">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <ul class="list-inline custom-breadcrumb">
-              <li class="list-inline-item"><a class="h2 text-primary font-secondary">{{pageTitle}}</a></li>
-              <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+   <page-title-section :page-title="pageTitle" :url="this.$route" :background="'/images/about/about-page-n.png'"/>
     <!-- /page title -->
 
     <!-- about -->
-
-    <section class="section">
+   <section class="section">
       <div class="container">
         <div class="row mb-lg-3">
           <div class="col-12">
             <h2 class="section-title h3 font-weight-bold">
               <i class="ti-home mb-xl-4 mb-lg-3 mb-4 feature-icon-small"></i> OUR JOURNY</h2>
-            <p>Prima Academy is a mixed sex school located at Nii Okaiman, a suburb of Accra. It was founded in the year 1997 by the late Mrs Gladys Tettey – Akrofi an auditor by profession. It is registered under the Companies Code, 1963 (Act 179)
-              The school which began in a wooden structure with 2 children (a boy and a girl) can now boost of five hundred and thirty seven (537) school children with forty six (46) members of staff.</p>
+            <p>Prima Academy is a mixed sex school located at Nii Okaiman, a suburb of Accra. It was founded in the year 1997 by the late Mrs Gladys Tettey – Akrofi an auditor by profession. It is registered under the Companies Code, 1963 (Act 179).
+              The school which began in a wooden structure with 2 children (a boy and a girl), but can now boast of five hundred and thirty seven (537) school children with forty six (46) members of staff.</p>
           </div>
         </div>
 
@@ -61,7 +49,7 @@
           <div v-for="(fact, key) in funFacts" :key="key" class="col-md-3 col-sm-6 mb-4 mb-md-0">
             <div class="text-center">
               <h2 class="count text-white">
-                <count-up v-if="typeof fact === 'number'" :to="fact"></count-up>
+                <count-up v-if="typeof fact === 'number'" :endAt="fact"></count-up>
                 <span v-else>{{fact}}</span>
               </h2>
               <h5 class="text-white">{{key.toString().toUpperCase()}}</h5>
@@ -73,7 +61,7 @@
     <!-- /funfacts -->
 
     <!-- success story -->
-    <section class="section bg-cover" data-background="images/backgrounds/success-story.jpg">
+    <section class="section bg-cover" v-background="'images/backgrounds/success-story.jpg'">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-sm-4 position-relative success-video">

@@ -1,10 +1,16 @@
 // Color Variables
-$primary-color: #ffbc3b;
 $prima-gold : #a6820d;
-$secondary-color: #1a1a37;
+$prima-yellow : #a6820d;
+$prima-orange : #ff8700;
+//$primary-color: #ffbc3b;
+$primary-color: $prima-orange;
+
+//$secondary-color: #1a1a37;
+$secondary-color: #000;
 $text-color: #5c5c77;
 $text-color-light: #8585a4;
-$text-color-dark: #1e1e4b;
+//$text-color-dark: #1e1e4b;
+$text-color-dark: #000;
 $body-color: #fff;
 $border-color: #ededf1;
 $black: #000;

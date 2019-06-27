@@ -5,17 +5,7 @@
   <!-- /header -->
 
   <!-- page title -->
-  <section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
-   <div class="container">
-    <div class="row">
-     <div class="col-md-8">
-      <ul class="list-inline custom-breadcrumb">
-       <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="teacher.html">The {{staff.role}}</a></li>
-      </ul>
-     </div>
-    </div>
-   </div>
-  </section>
+  <page-title-section :page-title="`The ${staff.role}`" :url="this.$route" :background="'/images/about/about-page-n.png'"/>
   <!-- /page title -->
 
   <!-- teacher details -->
@@ -23,7 +13,7 @@
    <div class="container">
     <div class="row">
      <div class="col-md-5 mb-5">
-      <img class="img-fluid w-100" src="images/teachers/teacher-1.jpg" alt="teacher">
+      <img class="img-fluid w-100" src="/images/teachers/teacher-1.jpg" alt="teacher">
      </div>
      <div class="col-md-6 mb-5">
       <h3>{{staff.name}}</h3>

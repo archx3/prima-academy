@@ -1,11 +1,11 @@
 <template>
  <div id='app-ad-s'>
   <!-- header -->
-  <header-section/>
+  <header-section :title="pageTitle"/>
   <!-- /header -->
   <!-- page title -->
 
-  <page-title-section :page-title="pageTitle" :url="this.$route"/>
+  <page-title-section :page-title="pageTitle" :url="this.$route" :background="'/images/about/about-page-n.png'"/>
   <!-- /page title -->
 
   <!-- courses -->
