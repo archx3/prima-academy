@@ -11,7 +11,7 @@ export default {
   state    : {
     info : {
       name  : 'Prima Academy',
-      motto : '',
+      motto : 'Arise and Shine',
       yearEstablished : '',
       logo : ''
     },

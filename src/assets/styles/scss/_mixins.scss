@@ -9,7 +9,12 @@
   }
 }
 @mixin tablet{
-  @media(max-width:767px){
+  @media(max-width:768px){
+    @content;
+  }
+}
+@mixin kindle{
+  @media(max-width:800px){
     @content;
   }
 }

@@ -1,10 +1,10 @@
 <template>
  <div id='app-mgt'>
   <!-- header -->
-  <header-section/>
+  <header-section :title="pageTitle"/>
   <!-- /header -->
     <!-- page title -->
-  <page-title-section :page-title="'Management Team'" :url="this.$route"/>
+  <page-title-section :page-title="pageTitle" padding-top="400" :url="this.$route" :background="'/images/about/about-page-n.png'"/>
     <!-- /page title -->
 
     <!-- teachers -->
@@ -16,12 +16,12 @@
              <div v-for="(member, index) in management" :key="index" data-ref="mixitup-target"
                   class="col-lg-4 col-sm-6 mb-5 staff">
                 <div class="card border-0 rounded-0 hover-shadow">
-                   <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="teacher">
+                   <img class="card-img-top rounded-0" src="/images/teachers/teacher-1.jpg" alt="teacher">
                    <div class="card-body">
                       <router-link :to="`/staff/${index}`">
-                         <h4 class="card-title">{{member.name}}</h4>
+                         <h4 class="card-title mb-0">{{member.name}}</h4>
                       </router-link>
-                      <p>{{member.role}}</p>
+                      <p class="mb-0">{{member.role}}</p>
                    </div>
                 </div>
              </div>
@@ -36,15 +36,17 @@
 </template>
 
 <script>
-  import { mapGetters }   from 'vuex';
-  import PageTitleSection from '../components/PageTitleSection'
+import { mapGetters }   from 'vuex';
+import PageTitleSection from '../components/PageTitleSection'
 
-  export default {
+export default {
   name      : 'ManagementTeam',
   components: { PageTitleSection },
   props     : [],
   data () {
-    return {}
+    return {
+      pageTitle : 'Management Team'
+    }
   },
   computed  : {
     ...mapGetters('school', { management : 'management' })
@@ -52,4 +54,3 @@
   methods   : {},
 }
 </script>
-

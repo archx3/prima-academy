@@ -21,6 +21,13 @@
   background-image: linear-gradient(to right, transparent 50%, $primary-color 50%);
   transition: .2s ease;
 
+  @include tablet {
+    background-image: linear-gradient(to right, transparent 80%, $primary-color 20%);
+  }
+
+  @include kindle {
+    background-image: linear-gradient(to right, transparent 80%, $primary-color 20%);
+  }
   @include mobile {
     background-image: linear-gradient(to right, transparent 70%, $primary-color 30%);
   }
@@ -37,7 +44,17 @@
 
 .nav-bg {
   background-color: $secondary-color;
-  margin-top: -46px;
+  margin-top: -47px;
+
+  .navbar-expand-lg .navbar-nav .nav-link{
+    padding: 23px 0;
+  }
+
+  .navbar-brand{
+    img{
+      height: 65px;
+    }
+  }
 }
 
 .nav-item {
@@ -88,7 +105,7 @@ link:focus,
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-  padding: 40px 0px;
+  padding: 40px 0;
 
   @include desktop {
     padding: 20px;
@@ -118,7 +135,7 @@ link:focus,
       box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.12);
       border-bottom: 5px solid $primary-color;
       padding: 15px;
-      top: 96px;
+      top: calc(100% - 2px);
       border-radius: 0;
       display: block;
       visibility: hidden;
@@ -172,6 +189,28 @@ link:focus,
       &:hover {
         color: $primary-color;
         background: transparent;
+      }
+    }
+  }
+
+  .navbar-brand{
+    h2{
+      @include tablet{
+        font-size: 25px;
+      }
+      @include mobile{
+        font-size: 15px;
+      }
+    }
+    img{
+      padding: 5px;
+      transition: all .3s ease;
+
+      @include tablet{
+        height: 50px;
+      }
+      @include mobile{
+        height: 40px;
       }
     }
   }

@@ -22,7 +22,6 @@ import FooterSection from './components/FooterSection'
 Vue.directive('background', function (el, binding) {
   if (typeof binding.value === 'string') {
     el.style.backgroundImage =  `url(${binding.value})`;
-    console.log(el, binding.value, el.style.backgroundImage);
   } else if (typeof binding.value === 'object') {
     for (let property in binding.value) {
       if (binding.value.hasOwnProperty(property)) {
