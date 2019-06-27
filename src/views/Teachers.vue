@@ -12,7 +12,8 @@
        <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Our teacher</a></li>
        <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
       </ul>
-      <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+      <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and
+       the emphasis placed on final exams by others.</p>
      </div>
     </div>
    </div>
@@ -205,22 +206,22 @@
   </section>
   <!-- /teachers -->
   <!--footer-->
-  <footer-section />
+  <footer-section/>
   <!--/footer-->
  </div>
 </template>
 
 <script>
-  export default {
-    name: "Teachers",
-    components : {},
-    props : [],
-    data () {
-      return {}
-    },
-    methods : {},
-    computed : {}
-  }
+export default {
+  name      : 'Teachers',
+  components: {},
+  props     : [],
+  data () {
+    return {}
+  },
+  methods   : {},
+  computed  : {}
+}
 </script>
 
 <style lang="scss" scoped>

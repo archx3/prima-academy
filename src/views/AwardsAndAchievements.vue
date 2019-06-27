@@ -5,22 +5,22 @@
   <!-- /header -->
 
   <!--footer-->
-  <footer-section />
+  <footer-section/>
   <!--/footer-->
  </div>
 </template>
 
 <script>
-  export default {
-    name: "AwardsAndAchievements",
-    components : {},
-    props : [],
-    data () {
-      return {}
-    },
-    methods : {},
-    computed : {}
-  }
+export default {
+  name      : 'AwardsAndAchievements',
+  components: {},
+  props     : [],
+  data () {
+    return {}
+  },
+  methods   : {},
+  computed  : {}
+}
 </script>
 
 <style lang="scss" scoped>
