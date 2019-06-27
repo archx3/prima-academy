@@ -18,7 +18,8 @@
        <div class="card rounded-0 hover-shadow">
         <div class="card-img position-relative">
          <router-link :to="`/gallery/${i}/${gallerySet.name.toLocaleLowerCase()}`">
-           <img class="card-img-top rounded-0" :src="`/images/gallery/${gallerySet.dir_name}/${gallerySet.thumbnail}`" alt="event thumb">
+          <img class="card-img-top rounded-0" :src="`/images/gallery/${gallerySet.dir_name}/${gallerySet.thumbnail}`"
+               alt="event thumb">
          </router-link>
          <!-- <div class="card-date"><span>18</span><br>December</div>-->
         </div>
@@ -39,35 +40,35 @@
   </section>
   <!-- /courses -->
   <!--footer-->
-  <footer-section />
+  <footer-section/>
   <!--/footer-->
  </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import {mapGetters} from 'vuex'
-import VueMasonry from 'vue-masonry-css'
+import Vue            from 'vue'
+import { mapGetters } from 'vuex'
+import VueMasonry     from 'vue-masonry-css'
 
 Vue.use(VueMasonry);
 
 export default {
-  name: "Gallery",
-  components : {VueMasonry},
-  props : ['galleryData'],
+  name      : 'Gallery',
+  // eslint-disable-next-line vue/no-unused-components
+  components: { VueMasonry },
+  props     : ['galleryData'],
   data () {
-    return {
-    }
+    return {}
   },
-  computed : {
-    ...mapGetters('gallery', { gallerySets : 'all' })
+  computed  : {
+    ...mapGetters('gallery', { gallerySets: 'all' })
   },
-  methods : {},
+  methods   : {},
 }
 </script>
 
 <style lang="scss" scoped>
- .gallery-set{
+ .gallery-set {
   /*border-right: 1px solid #ccc;*/
  }
 </style>

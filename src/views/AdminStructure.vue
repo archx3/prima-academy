@@ -28,75 +28,75 @@
   </section>
   <!-- /courses -->
   <!--footer-->
-  <footer-section />
+  <footer-section/>
   <!--/footer-->
  </div>
 </template>
 
 <script>
-import Vue from 'vue';
+import Vue         from 'vue';
 import Vue2OrgTree from 'vue2-org-tree'
 
 Vue.use(Vue2OrgTree)
 
 export default {
-  name: "AdminStructure",
-  components : {
+  name      : 'AdminStructure',
+  components: {
     Vue2OrgTree
   },
-  props : [],
+  props     : [],
   data () {
     return {
-      pageTitle : 'Administrative Structure',
-      organisationalStructure : {
-        id: 0,
-        label: 'C.E.O',
-        expand : true,
+      pageTitle              : 'Administrative Structure',
+      organisationalStructure: {
+        id      : 0,
+        label   : 'C.E.O',
+        expand  : true,
         children: [{
-          id: 2,
-          label: 'Director of Administration',
-          expand : true,
+          id      : 2,
+          label   : 'Director of Administration',
+          expand  : true,
           children: [{
-            id: 21,
+            id   : 21,
             label: 'Headmaster'
           }, {
-            id: 22,
+            id   : 22,
             label: 'Supervisor'
           }],
         }, {
-          id: 3,
-          label: 'Director of Academics',
-          expand : true,
+          id      : 3,
+          label   : 'Director of Academics',
+          expand  : true,
           children: [{
-            id: 31,
+            id   : 31,
             label: 'Coordinator'
           }, {
-            id: 32,
-            label: 'Teaching Staff',
-            children : [
+            id      : 32,
+            label   : 'Teaching Staff',
+            children: [
               {
-                id: 321,
+                id   : 321,
                 label: 'Prefects',
               },
               {
-                id: 322,
+                id   : 322,
                 label: 'Students',
               },
             ]
           }]
         }]
       },
-      horizontal: false,
-      collapsable: true,
-      expandAll: false,
-      labelClassName: 'bg-orange'
+      horizontal             : false,
+      collapsable            : true,
+      expandAll              : false,
+      labelClassName         : 'bg-orange'
     }
   },
-  methods :  {
+  methods   : {
     renderContent: function (h, data) {
       return data.label
     },
-    onExpand: function (data) {
+    onExpand     : function (data) {
       if ('expand' in data) {
         data.expand = !data.expand
 
@@ -107,10 +107,10 @@ export default {
         this.$set(data, 'expand', true)
       }
     },
-    onNodeClick: function (e, data) {
+    onNodeClick  : function (e, data) {
       alert(data.label)
     },
-    collapse: function (list) {
+    collapse     : function (list) {
       var _this = this
       list.forEach(function (child) {
         if (child.expand) {
@@ -120,10 +120,10 @@ export default {
         child.children && _this.collapse(child.children)
       })
     },
-    expandChange: function () {
+    expandChange : function () {
       this.toggleExpand(this.data, this.expandAll)
     },
-    toggleExpand: function (data, val) {
+    toggleExpand : function (data, val) {
       var _this = this
       if (Array.isArray(data)) {
         data.forEach(function (item) {
@@ -140,13 +140,14 @@ export default {
       }
     }
   },
-  computed : {}
+  computed  : {}
 }
 </script>
 
 <style lang="scss">
  @import "../assets/styles/scss/_variables.scss";
- .bg-orange{
+
+ .bg-orange {
   background-color: $primary-color;
  }
 </style>

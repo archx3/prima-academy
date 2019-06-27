@@ -178,6 +178,4 @@ export default {
   margin: auto;
   margin-left: 10px;
  }
-
-
 </style>
