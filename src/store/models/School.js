@@ -13,26 +13,28 @@ export default {
       name  : 'Prima Academy',
       motto : 'Arise and Shine',
       yearEstablished : '',
-      logo : ''
+      logo : '',
+      coreValues : ['Respect', 'Integrity', 'Exellence', 'Perseverance', 'Teamwork']
     },
     academicSections : [
       {
         name : 'Pre School',
-        description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna',
-        pic : ''
+        description : 'The preschool is an establishment or learning space offering early childhood foundational education to children before they begin compulsory education at primary school.',
+        pic : '7.jpg'
       },
       {
-        name : 'Lower & Upper Primary',
-        description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna',
-        pic : ''
+        name : 'Primary School',
+        description : 'The stage school where children receive primary or elementary education from the age of about seven to twelve, coming after preschool, infant school and before high school.',
+        pic : '4.jpg'
       },
       {
         name : 'Junior High',
-        description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna',
-        pic : ''
+        description : 'A middle school providing education between primary school and high school for children that have completed primary school, but are not yet old enough for high school.',
+        pic : '3.jpg'
       },
     ],
     awardsAndAchievements : [],
+    successStory : '',
     teachers : [
       {
         pic : '',
@@ -49,13 +51,39 @@ export default {
     ],
     management : [
       {
-        pic : '',
-        name : 'Mr Ahoma',
-        role : 'Principal',
-        email : 'ahoma@gmail.com',
+        pic : 'aisha-asi-akrofi.JPG',
+        name : 'Aisha Asi Akrofi',
+        role : 'C.E.O',
+        email : 'asimonalisa@gmail.com',
+      },
+      {
+        pic : 'ayisah-akrofi.JPG',
+        name : 'Ayisah Akrofi',
+        role : 'Director Of Administration',
+        email : 'asimonalisa@gmail.com',
+      },
+      {
+        pic : 'ahumah-akrofi.jpg',
+        name : 'Ahumah Akrofi',
+        role : 'Director of Academics',
+      },
+      {
+        pic : 'aisah-mohammmed.JPG',
+        name : 'Aisah Mohammmed',
+        role : 'Supervisor',
         phone : '+233 260 721 1202',
         skype : '',
         bio : ''
+      },
+      {
+        pic : 'felix-kofi-fianoo.jpg',
+        name : 'Felix Kofi Fianoo',
+        role : 'Head master',
+      },
+      {
+        pic : 'comfort-adams.jpg',
+        name : 'Comfort Adams',
+        role : 'Burser',
       },
     ]
   },

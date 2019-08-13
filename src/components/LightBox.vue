@@ -5,14 +5,19 @@
   <div class="nivo-lightbox-wrap">
    <div class="nivo-lightbox-content">
     <div class="nivo-lightbox-image" style="line-height: 373px; height: 100%;">
-     <img v-if="selectedImage !== null"
-          :style="{transform : `scale(${zoom})`}"
-          :src="`/images/gallery/${subDir+'/'}${selectedImage[imageNameProp]}`"
-          class="nivo-lightbox-image-display" alt="">
+
+     <div ref="displays" :style="{transform : `scale(${zoom}) translateX(${pan.x}px) translateY(${pan.y}px)`}" class="nivo-lightbox-image-inner">
+      <!--<img v-if="selectedImage !== null" @dblclick="this.resetZoomAndPan" @mousedown.prevent="mouseDownHandler($event)"
+           :src="`/images/gallery/${subDir+'/'}${selectedImage}.jpg`"
+           class="nivo-lightbox-image-display shadow-display" alt="">-->
+      <img v-if="selectedImage !== null" @dblclick="this.resetZoomAndPan" @mousedown.prevent="mouseDownHandler($event)"
+           :src="`/images/gallery/${subDir+'/'}${selectedImage}.jpg`"
+           class="nivo-lightbox-image-display" alt="">
+     </div>
     </div>
    </div>
 
-   <div class="nivo-lightbox-title-wrap">Image Ttile Here</div>
+   <!--   <div class="nivo-lightbox-title-wrap">Image Title Here</div>-->
   </div>
 
   <div class="nivo-lightbox-nav nivo-lightbox-prev" @click.prevent="previous" style="font-size: 35px">
@@ -24,7 +29,7 @@
   <div class="nivo-lightbox-close" @click="hideLightBox">
    <i class="ti-close"></i>
   </div>
-<!--  <a @click="hideLightBox" class=" nivo-lightbox-close" title="Close" style="{width: 40px; height: 40px}">&times;</a>-->
+  <!--  <a @click="hideLightBox" class=" nivo-lightbox-close" title="Close" style="{width: 40px; height: 40px}">&times;</a>-->
  </div>
 </template>
 <script>
@@ -38,21 +43,27 @@ export default {
     },
     imageNameProp: {
       default: 'link'
-    }
+    },
   },
   data () {
     return {
-      maxIndex: this.galleryData ? this.galleryData.pics.length - 1 : 0,
-      zoom : 1,
-      rotation : 0
+      maxIndex: this.galleryData ? this.galleryData.pics : 0,
+      zoom    : 1,
+      rotation: 0,
+      pan     : {
+        x: 0,
+        y: 0
+      },
+      imageElInView : 1
     }
   },
   computed: {
-    /* maxIndex         : function () {
-    return this.galleryData.images.length - 1
-    }, */
-    currentImageIndex: function () {
-      return this.galleryData.selected !== null ? this.galleryData.pics.indexOf(this.selectedImage) : -1
+    panRatio () {
+      return this.zoom;
+    },
+    currentImageIndex () {
+      console.log(this.galleryData.pics);
+      return this.galleryData.selected !== null ? this.selectedImage : -1
     }
   },
   created () {
@@ -74,41 +85,93 @@ export default {
         this.hideLightBox()
       }
     },
+    slideRight () {
+     let imageEls = this.$refs.displays.children;
+     if (this.imageElInView === 1) {
+       imageEls[1].style.left = '150%'
+       imageEls[0].style.left = '0'
+     }
+    },
     next () {
       this.setSelectedImage(this.currentImageIndex < this.maxIndex // eslint-disable-next-line indent
-                            ? this.galleryData.pics[this.currentImageIndex + 1] : this.galleryData.pics[0])
+                            ? this.currentImageIndex + 1 : 0);
+      this.slideRight()
     },
     previous () {
-      this.setSelectedImage(this.galleryData.pics[this.currentImageIndex > 0 ? this.currentImageIndex - 1 : this.maxIndex])
+      this.setSelectedImage(this.currentImageIndex > 0 ? this.currentImageIndex - 1 : this.maxIndex)
     },
     setSelectedImage (image) {
-      this.zoom = 1
+      this.resetZoomAndPan()
       this.$emit('setSelected', image)
     },
+    resetZoomAndPan () {
+      this.zoom = 1;
+      this.rotation = 0;
+      this.pan = {
+        x: 0,
+        y: 0
+      }
+      document.documentElement.scrollTop = 0;
+    },
     mouseWheelHandler () {
-      let delta = window.scrollY,
-        zoomBy = 0.02;
+      let delta  = window.scrollY,
+          zoomBy = 0.02;
 
       if (this.selectedImage !== null)
       {
-        console.log(this.setSelectedImage);
-        if (delta > this.lastScrollTop) // scrolling down
+        if (delta > this.lastScrollTop) // scrolling down let's zoom in
         {
-          // if (this.zoom > 1){
-          this.zoom -= zoomBy
-          // }
-          console.log('scrolling down');
-        }
-        else // scrolling up
-        {
-          console.log('scrolling up');
-
-          // if (this.zoom < 1) {
           this.zoom += zoomBy
-          // }
+        } else // scrolling up let's zoom out
+        {
+          this.zoom -= zoomBy
         }
       }
       this.lastScrollTop = delta
+    },
+    /**
+     * Returns the computed property Value for
+     * translate(X|Y|Z)
+     * @param obj {Element|HTMLElement}
+     * @param axis {String<'x'|'y'|'z'>}
+     * @returns {number}
+     */
+    getComputedTranslate (obj, axis) {
+      if (!window.getComputedStyle) return;
+      axis = axis.toLocaleLowerCase();
+      var style       = getComputedStyle(obj),
+          transform   = style.transform,
+          matrixIndex = axis === 'x' ? 4 : axis === 'y' ? 5 : 14;
+      var mat = transform.match(/^matrix3d\((.+)\)$/);
+
+      if (mat) { return parseFloat(mat[1].split(', ')[13]); }
+      mat = transform.match(/^matrix\((.+)\)$/);
+
+      return mat ? parseFloat(mat[1].split(', ')[matrixIndex]) : 0;
+    },
+    mouseDownHandler (e) {
+      let el = e.target;
+      let _this = this;
+      let mouseDownX = event.clientX;
+      let mouseDownY = event.clientY;
+
+      var originalLeft = _this.getComputedTranslate(el, 'x');
+      var originalTop = _this.getComputedTranslate(el, 'y');
+
+      function dragMe (event) {
+        _this.pan.x = (originalLeft + event.clientX - mouseDownX) / _this.panRatio;
+        _this.pan.y = (originalTop + event.clientY - mouseDownY) / _this.panRatio;
+      }
+
+      function dropMe (event) {
+        document.removeEventListener('mousemove', dragMe, false);
+        document.removeEventListener('mouseup', dropMe, false);
+      }
+
+      if (el === e.target && _this.zoom > 1) {
+        document.addEventListener('mouseup', dropMe, false);
+        document.addEventListener('mousemove', dragMe, false);
+      }
     }
   },
   mounted () {
@@ -186,7 +249,8 @@ export default {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  img{
+
+  img {
    pointer-events: all;
   }
  }
@@ -326,9 +390,10 @@ export default {
   position: absolute;
   top: 50%;
   left: 35px;
-   @include mobile{
-     left: 1px;
-   }
+  @include mobile {
+   left: 1px;
+  }
+
   &:hover {
 
    i {
@@ -343,9 +408,9 @@ export default {
   position: absolute;
   top: 50%;
   right: 35px;
-   @include mobile{
-     right: 1px;
-   }
+  @include mobile {
+   right: 1px;
+  }
  }
 
  .nivo-lightbox-close {
@@ -369,26 +434,15 @@ export default {
   -moz-border-radius: 50%;
   border-radius: 50%;
   -webkit-transition: all 0.4s;
-  transition: all 0.34s cubic-bezier(1,.1,0,1.01);
+  transition: all 0.34s cubic-bezier(1, .1, 0, 1.01);
   transform-origin: center;
+
   &:hover {
    color: $primary-color !important;
    //<!--background: $primary-color;-->
    transform: rotate(90deg);
    /*box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.3);*/
   }
- }
-
- .nivo-lightbox-image {
-  text-align: center;
- }
-
- .nivo-lightbox-image img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  vertical-align: middle;
  }
 
  .nivo-lightbox-content iframe {
@@ -399,5 +453,30 @@ export default {
  .nivo-lightbox-error p {
   display: table-cell;
   vertical-align: middle;
+ }
+
+ .shadow-display{
+  /*position: absolute;*/
+  transition: all .3s cubic-bezier(.93,-0.01,.58,1);
+  //left: -100%;
+ }
+ .nivo-lightbox-image {
+  text-align: center;
+ }
+
+ .nivo-lightbox-image img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+ }
+ .nivo-lightbox-image-inner{
+  height: 100%;
+  overflow: hidden;
+  display: flex;
  }
 </style>

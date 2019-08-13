@@ -15,8 +15,10 @@
     <div v-for="(section, index) in academicSections" :key="index"
          class="col-lg-4 col-sm-6 mb-5 p-0 academic-section">
      <div class="card p-0 border-primary rounded-0 hover-shadow">
-      <div class="icon p-3">
-       <span class="ti-user"></span>
+
+      <div class="icon overflow-hidden bg-cover" style="height: 150px"
+           v-background="`/images/gallery/ch/${section.pic}`">
+       <!-- <span class="ti-user"></span>-->
       </div>
       <div class="card-body">
        <router-link to="#" href="course-single.html"><!--FIXME replace with view router link-->

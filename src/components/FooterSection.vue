@@ -1,7 +1,7 @@
 <template>
  <footer>
   <!-- newsletter -->
-  <div class="newsletter">
+  <div class="newsletter" v-if="subscribe">
    <div class="container">
     <div class="row">
      <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
@@ -38,8 +38,8 @@
       <h4 class="text-white mb-5">SCHOOL</h4>
       <ul class="list-unstyled">
        <li class="mb-3"><a class="text-color" href="/#about">About Us</a></li>
-       <li class="mb-3"><router-link class="text-color" to="/management-team">Management</router-link></li>
-       <li class="mb-3"><router-link class="text-color" to="/contact">Contact</router-link></li>
+       <li class="mb-3"><router-link class="text-color" to="/management">Management</router-link></li>
+       <li class="mb-3"><router-link class="text-color" to="#">Contact</router-link></li>
        <li class="mb-3"><router-link class="text-color" to="/events">Events</router-link></li>
       </ul>
      </div>
@@ -50,7 +50,7 @@
        <li class="mb-3"><router-link class="text-color" to="/newsletter">Newsletter</router-link></li>
        <li class="mb-3"><router-link class="text-color" to="#">E School Report</router-link></li>
        <li class="mb-3"><router-link class="text-color" to="/calendar">Academic Calendar</router-link></li>
-       <li class="mb-3"><router-link class="text-color" to="#">FAQs</router-link></li>
+<!--       <li class="mb-3"><router-link class="text-color" to="#">FAQs</router-link></li>-->
       </ul>
      </div>
     </div>
@@ -65,15 +65,15 @@
      </div>
      <div class="col-sm-5 text-sm-right text-center">
       <ul class="list-inline">
-       <li class="list-inline-item"><a class="d-inline-block p-2" href="#">
+       <li class="list-inline-item"><a class="d-inline-block p-2" href="https://web.facebook.com/prima.aca">
         <i class="ti-facebook text-primary"></i></a>
        </li>
-       <li class="list-inline-item"><a class="d-inline-block p-2" href="#">
+       <!--<li class="list-inline-item"><a class="d-inline-block p-2" href="#">
         <i class="ti-twitter-alt text-primary"></i></a>
        </li>
        <li class="list-inline-item"><a class="d-inline-block p-2" href="#">
         <i class="ti-instagram text-primary"></i></a>
-       </li>
+       </li>-->
       </ul>
      </div>
     </div>
@@ -85,7 +85,11 @@
 import { mapGetters } from 'vuex'
 export default {
   name: 'footer-section',
-  props : [],
+  props : {
+    subscribe : {
+      default : false
+    }
+  },
   data () {
     return {
       year : new Date().getFullYear()

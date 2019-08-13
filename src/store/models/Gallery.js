@@ -5,8 +5,8 @@
  else all them are called at once when used */
 // All static images are stored in the public images folder
 // eslint-disable-next-line camelcase
-const base_dir = '../../public/images/gallery';
-const fs = require('fs');
+// const base_dir = '../../public/images/gallery';
+// const fs = require('fs');
 
 /**
  * Function to iterate over all images in a sub folder in the base directory
@@ -14,24 +14,24 @@ const fs = require('fs');
  * @returns {Array}
  */
 // eslint-disable-next-line camelcase
-function getAllImages (sub_dir) {
-  let images = [];
-
-  // eslint-disable-next-line camelcase
-  fs.readdir(`${base_dir}/${sub_dir}`, (err, files) => {
-    if (err) {
-      console.log(err);
-    } else {
-      files.forEach(file => {
-        images.push(
-          { link : 'D2470025.JPG',
-            title : ''
-          },)
-      });
-    }
-  });
-  return images;
-}
+// function getAllImages (sub_dir) {
+//   let images = [];
+//
+//   // eslint-disable-next-line camelcase
+//   fs.readdir(`${base_dir}/${sub_dir}`, (err, files) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       files.forEach(file => {
+//         images.push(
+//           { link : 'D2470025.JPG',
+//             title : ''
+//           },)
+//       });
+//     }
+//   });
+//   return images;
+// }
 
 export default {
   namespaced: true, // this ensures that we deal with naming conflicts
@@ -40,101 +40,69 @@ export default {
     gallery : [
       {
         name : 'Excellence Awards',
-        dir_name : 'excellence-awards',
-        pics : [
-          { link : 'D2470025.JPG', title : '' },
-          { link : 'D2470028.JPG', title : '' },
-          { link : 'D2470072.JPG', title : '' },
-          { link : 'D2470109.JPG', title : '' },
-          { link : 'D3470009.JPG', title : '' },
-          { link : 'D3470025.JPG', title : '' },
-          { link : 'D3470027.JPG', title : '' },
-          { link : 'D3470071.JPG', title : '' },
-          { link : 'D3470102.JPG', title : '' },
-          { link : 'D3470104.JPG', title : '' },
-          { link : 'D2470109.JPG', title : '' },
-          { link : 'DSC_2687.JPG', title : '' },
-          { link : 'DSC_2681.JPG', title : '' },
-          { link : 'DSC_2712.JPG', title : '' },
-          { link : 'DSC_2686.JPG', title : '' },
-          { link : 'DSC_2714.JPG', title : '' },
-        ],
-        thumbnail : 'D3470102.JPG'
-      },
+        dir_name : 'ea',
+        pics : 15,
+        thumbnail : '2.jpg'
+      }, //
       {
-        name : 'Excursion',
-        dir_name : 'excursion',
-        pics : [
-          { link : 'IMG_0433.JPG', title : '' },
-          { link : 'IMG_0514.JPG', title : '' },
-          { link : 'IMG_0543.JPG', title : '' },
-        ],
-        thumbnail : 'IMG_0433.JPG'
-      },
+        name : 'Excursion To Elmina',
+        dir_name : 'ee',
+        pics : 21,
+        thumbnail : '1.jpg'
+      }, //
+      {
+        name : 'Graduation 2016',
+        dir_name : 'g-2016',
+        pics : 42,
+        thumbnail : '14.jpg'
+      }, //
+      {
+        name : 'Graduation 2017',
+        dir_name : 'g-2017',
+        pics : 54,
+        thumbnail : '46.jpg'
+      }, //
       {
         name : 'Graduation 2018',
-        dir_name : 'graduation-2018',
-        pics : [
-          { link : 'D2460110.JPG', title : '' },
-          { link : 'D2460139.JPG', title : '' },
-          { link : 'D2460185.JPG', title : '' },
-          { link : 'D2470013.JPG', title : '' },
-          { link : 'D2470086.JPG', title : '' },
-          { link : 'D2460115.JPG', title : '' },
-          { link : 'D2460140.JPG', title : '' },
-          { link : 'D2460188.JPG', title : '' },
-          { link : 'D2470016.JPG', title : '' },
-          { link : 'D2460148.JPG', title : '' },
-          { link : 'D2460193.JPG', title : '' },
-          { link : 'D2470017.JPG', title : '' },
-          { link : 'D2460120.JPG', title : '' },
-          { link : 'D2460170.JPG', title : '' },
-          { link : 'D2460198.JPG', title : '' },
-          { link : 'D2470042.JPG', title : '' },
-          { link : 'D2460138.JPG', title : '' },
-          { link : 'D2460184.JPG', title : '' },
-          { link : 'D2460203.JPG', title : '' },
-          { link : 'D2470061.JPG', title : '' },
-        ],
-        thumbnail : 'D2470013.JPG'
+        dir_name : 'g-2018',
+        pics : 21,
+        thumbnail : '8.jpg'
+      }, //
+      {
+        name : 'Clean Up Exercise 2014',
+        dir_name : 'cue',
+        pics : 84,
+        thumbnail : '6.jpg'
+      }, //
+      {
+        name : 'GNAPS Week 2014',
+        dir_name : 'gw',
+        pics : 42,
+        thumbnail : '32.jpg'
+      },
+      {
+        name : 'Educational Visit to Kwame Nkrumah Mausoleum',
+        dir_name : 'ev',
+        pics : 12,
+        thumbnail : '1.jpg'
+      },
+      {
+        name : 'Fun Trip To Legon Botanical Gardens',
+        dir_name : 'fttlbg',
+        pics : 10,
+        thumbnail : '8.jpg'
+      },
+      {
+        name : 'Profession Day 2016',
+        dir_name : 'pd',
+        pics : 36,
+        thumbnail : '2.jpg'
       },
       {
         name : 'Multicultural Day Celebration 2018',
-        dir_name : 'multicultural-day-celebration-2018',
-        pics : [
-          { link : 'D3490002.JPG', title : '' },
-          { link : 'D3490050.JPG', title : '' },
-          { link : 'D3490035.JPG', title : '' },
-          { link : 'D3490091.JPG', title : '' },
-          { link : 'D3490108.JPG', title : '' },
-          { link : 'D3490015.JPG', title : '' },
-          { link : 'D3490008.JPG', title : '' },
-          { link : 'D3490003.JPG', title : '' },
-          { link : 'D3490118.JPG', title : '' },
-          { link : 'D3490149.JPG', title : '' },
-          { link : 'D3490086.JPG', title : '' },
-          { link : 'D3490094.JPG', title : '' },
-          { link : 'D3490109.JPG', title : '' },
-          { link : 'D3490119.JPG', title : '' },
-          { link : 'D3490150.JPG', title : '' },
-          { link : 'D3490055.JPG', title : '' },
-          { link : 'D3490106.JPG', title : '' },
-          { link : 'D3490117.JPG', title : '' },
-          { link : 'D3490077.JPG', title : '' },
-          { link : 'D3490099.JPG', title : '' },
-          { link : 'D3490111.JPG', title : '' },
-          { link : 'D3490100.JPG', title : '' },
-          { link : 'D3490184.JPG', title : '' },
-          { link : 'D3490138.JPG', title : '' },
-          { link : 'D3490113.JPG', title : '' },
-          { link : 'D3490157.JPG', title : '' },
-          { link : 'D3490140.JPG', title : '' },
-          { link : 'D3490160.JPG', title : '' },
-          { link : 'D3490146.JPG', title : '' },
-          { link : 'D3490172.JPG', title : '' },
-          { link : 'D3490182.JPG', title : '' },
-        ],
-        thumbnail : 'D3490150.JPG'
+        dir_name : 'mcd',
+        pics : 31,
+        thumbnail : '20.jpg'
         // pics : getAllImages('multicultural-day-celebration-2018')
       },
     ]
@@ -147,7 +115,7 @@ export default {
   // Use to alter state not for fetching data or complex computations
   mutations : {
   },
-  // Do not use for direct update. Call the coresponding mutation
+  // Do not use for direct update. Call the corresponding mutation
   actions   : {
   },
 }
