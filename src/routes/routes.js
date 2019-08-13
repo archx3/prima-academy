@@ -2,7 +2,7 @@ import Home          from  '../views/Home'
 import { store } from '../store/store'
 export default [
   { path : '/', name : 'home', component : Home },
-  { path : '/admin-structure',
+  { path : '/adminstructure',
     name : 'admin-structure',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -56,14 +56,14 @@ export default [
       }
     }
   },
-  { path : '/teachers',
+  /* { path : '/teachers',
     name : 'teachers',
-    component: () => import(/* webpackChunkName: "teachers" */ '../views/Teachers.vue')
+    component: () => import(/!* webpackChunkName: "teachers" *!/ '../views/Teachers.vue')
   },
   { path : '/teacher/:id',
     name : 'teacher',
-    component: () => import(/* webpackChunkName: "teacher" */ '../views/Teacher.vue')
-  },
+    component: () => import(/!* webpackChunkName: "teacher" *!/ '../views/Teacher.vue')
+  }, */
   { path : '/staff/:id',
     name : 'staff',
     component: () => import(/* webpackChunkName: "staff" */ '../views/Staff.vue'),
@@ -71,14 +71,14 @@ export default [
       return { staff : store.state.school.management[route.params.id] }
     }
   },
-  { path : '/management-team',
+  { path : '/management',
     name : 'management-team',
     component: () => import(/* webpackChunkName: "mgt" */ '../views/ManagementTeam.vue'),
   },
-  { path : '/contact',
+  /* { path : '/contact',
     name : 'contact',
-    component: () => import(/* webpackChunkName: "contact" */ '../views/Contact.vue')
-  },
+    component: () => import(/!* webpackChunkName: "contact" *!/ '../views/Contact.vue')
+  }, */
   { path : '/calendar',
     name : 'calendar',
     component: () => import(/* webpackChunkName: "contact" */ '../views/AcademicCalendar.vue')

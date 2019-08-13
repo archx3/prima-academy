@@ -4,37 +4,40 @@
     <header-section :title="pageTitle"/>
     <!-- /header -->
     <!-- page title -->
-   <page-title-section :page-title="pageTitle" :url="this.$route" :background="'/images/about/about-page-n.png'"/>
+   <page-title-section :page-title="pageTitle" :url="this.$route" :background="'https://primaca.sirv.com/Images/about/about-page-n.png'"/>
     <!-- /page title -->
-
     <!-- about -->
-   <section class="section">
+   <section class="section abt-section">
       <div class="container">
         <div class="row mb-lg-3">
           <div class="col-12">
             <h2 class="section-title h3 font-weight-bold">
-              <i class="ti-home mb-xl-4 mb-lg-3 mb-4 feature-icon-small"></i> OUR JOURNY</h2>
-            <p>Prima Academy is a mixed sex school located at Nii Okaiman, a suburb of Accra. It was founded in the year 1997 by the late Mrs Gladys Tettey – Akrofi an auditor by profession. It is registered under the Companies Code, 1963 (Act 179).
+              <i class="ti-home mb-xl-4 mb-lg-3 mb-4 feature-icon-small vertical-align-middle"></i> OUR JOURNEY</h2>
+            <p class="lh2">Prima Academy is a mixed sex school located at Nii Okaiman, a suburb of Accra. It was founded in the year 1997 by the late Mrs Gladys Tettey – Akrofi an auditor by profession. It is registered under the Companies Code, 1963 (Act 179).
               The school which began in a wooden structure with 2 children (a boy and a girl), but can now boast of five hundred and thirty seven (537) school children with forty six (46) members of staff.</p>
           </div>
         </div>
 
         <div class="row mb-lg-3">
-          <div class="col-md-6 col-12">
+          <div class="col-12">
             <h2 class="section-title h3 font-weight-bold">
-              <i class="ti-rocket mb-xl-4 mb-lg-3 mb-4 feature-icon-small"></i> OUR MISSION</h2>
+              <i class="ti-rocket mb-xl-4 mb-lg-3 mb-4 feature-icon-small vertical-align-middle"></i> MISSION</h2>
             <p>Our mission is to provide the opportunity for each child to reach his/her potential academically, socially, emotionally, spiritually within a happy and safe environment.</p>
           </div>
-          <div class="col-md-6 col-12">
+        </div>
+        <div class="row mb-lg-3">
+          <div class="col-12">
             <h2 class="section-title h3 font-weight-bold">
-              <i class="ti-eye mb-xl-4 mb-lg-3 mb-4 feature-icon-small"></i> OUR VISION</h2>
+              <i class="ti-eye mb-xl-4 mb-lg-3 mb-4 feature-icon-small vertical-align-middle"></i> VISION</h2>
             <p>Our vision is to Produce Responsible, Intellectual, and Matured achievers to sustain and develop the virtues of society.</p>
           </div>
         </div>
         <div class="row mb-lg-3">
           <div class="col-md-6 col-12">
             <h2 class="section-title h3 font-weight-bold"><i class="ti-hand-drag mb-xl-4 mb-lg-3 mb-4 feature-icon-small"></i>Core values</h2>
-            <p>Integrity, Respect Excellence, Creativity, Teamwork, Perseverance, Justice, </p>
+            <p v-for="(value, v) in coreValues" :key="v">
+              <i class="ti-check-box mb-xl-4 mb-lg-3 mb-4 "></i> {{value}}
+            </p>
           </div>
         </div>
       </div>
@@ -72,8 +75,10 @@
           <div class="col-lg-6 col-sm-8">
             <div class="bg-white p-5">
               <h2 class="section-title">Success Stories</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+              <p>Like most kids out there, young as I was, I couldn't clearly pin point a career path fit for me.</p>
+              <p>Joining Prima Academy gave me the opportunity to widen my knowledge about potential career paths and and ended-up gingering my interest in Technology and engineering.</p>
+              <p>Joining the Tech Club in particular dispelled a notion I had, that tech products were results of magic. Now more than ever, I have mustered great interest in beig a computer engineer one day, in line with modern career trends and the overall shift towards automation</p>
+              <p class="font-italic ">Nana Antwi Boasiako, Class of 2014</p>
             </div>
           </div>
         </div>
@@ -143,7 +148,8 @@ export default {
         'Drama club',
         'Prima dance club',
         'Cultural group'
-      ]
+      ],
+      coreValues : ['Integrity', 'Respect', 'Excellence', 'Teamwork', 'Perseverance']
     }
   },
   methods : {},
@@ -152,5 +158,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/styles/scss/mixins';
+  @import '../assets/styles/scss/variables';
 
+  .ti-check-box{
+    color: $primary-color;
+    font-weight: 600;
+  }
+  .section-title{
+    margin-bottom: 20px;
+    font-weight: lighter !important;
+    @include desktop{
+      margin-bottom: 20px !important;
+    }
+  }
+  .abt-section{
+    p{
+      font-size: 21px;
+      margin-left: 10px;
+      margin-bottom: 25px;
+      @include desktop{
+        line-height: 2.2;
+      }
+      @include mobile{
+        line-height: 1.7;
+      }
+    }
+  }
 </style>

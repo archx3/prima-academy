@@ -8,17 +8,17 @@ export default {
   namespaced: true, // this ensures that we deal with naming conflicts
   modules   : {}, // nested modules
   state     : {
-    location      : 'No5 Blk 1050, Nii Okaiman (Tabora), Accra, Gh',
-    correspondence: 'P. O. Box STH sth',
-    phones        : ['+233260721202', '+233242129206'],
-    email : 'primaaca@yahoo.com',
+    location      : 'Nii Okaiman (Tabora), Accra, Gh',
+    correspondence: 'P. O. Box KN 335, Kaneshie Accra',
+    phones        : ['+233 550 462 623', '+233 243 505 957'],
+    email : 'primaacademy@gmail.com',
     hours         : {
       'Nursery & Kg': '7:00am – 3:30pm',
       'Primary'     : '6:30am – 4:00pm',
       'JHS'         : '6:15am – 4:30pm'
     },
     socialMedia : {
-      facebook : '',
+      facebook : 'https://web.facebook.com/prima.aca',
       twitter : '',
       instagram : ''
     }

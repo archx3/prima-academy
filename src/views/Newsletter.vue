@@ -15,22 +15,56 @@
       <div class="d-flex">
        <div class="text-center mr-4">
         <div class="p-4 bg-primary text-white">
-         <span class="h2 d-block">30</span> APR,2019
+         <span class="h2 d-block">05</span> APR,2019
         </div>
        </div>
        <!-- notice content -->
        <div>
-        <h3 class="mb-4">Teaching Materials and Testing Methods</h3>
-        <p>Lorem ipsum dolor sit amet, lectus molestie amet eget varius nulla ultricies, senectus vehicula wisi risus tellus nonummy. Urna volutpat, nunc doloremque risus felis lorem risus. Et suspendisse diam libero pulvinar, tristique ac cras luctus ornare. Quam justo. Non ligula turpis sem, velit dolor luctus venenatis. Eros eget at vitae, wisi diam ut ad convallis, in gravida nunc inceptos sed leo donec, duis dolorem adipiscing arcu facilisis. Purus lorem vulputate et condimentum in felis, porttitor accumsan id bibendum diam varius, lorem diam molestie erat a amet urna, dolor pellentesque lectus justo adipiscing. Laoreet est velit vestibulum, laoreet luctus bibendum sed ornare amet elementum, ullamcorper nibh in sollicitudin donec arcu lorem.</p>
-        <p>Quam justo. Non ligula turpis sem, velit dolor luctus venenatis. Eros eget at vitae, wisi diam ut ad convallis, in gravida nunc inceptos sed leo donec, duis dolorem adipiscing arcu facilisis. Purus lorem vulputate et condimentum in felis, porttitor accumsan id bibendum diam varius, lorem diam molestie erat a amet urna, dolor pellentesque lectus justo adipiscing. Laoreet est velit vestibulum, laoreet luctus bibendum sed ornare amet elementum, ullamcorper nibh in sollicitudin donec arcu lorem.</p>
+        <p class="font-italic">All praises to God! The second term of the  2018/19 academic year has successfully come to an end.
+         We wish to bring to your notice the following:</p>
+
+        <h3 class="mb-4">VACATION AND RE-OPENING</h3>
+        <p>School breaks today, Friday 5th April , 2019, bringing the second term to an end. School will resume on Tuesday 7th May,2019 to commence the third term of the academic year.</p>
+
+        <h3 class="mb-4">FEES</h3>
+        <p>The school fees remains the same and feeding fees are unchanged . That is GH3 cedis across board . It should however be noted that the cost of books for 2018-2019 academic year has been split into three parts and included in the fees for next term .</p>
+
+        <h3 class="mb-4">HEALTH INSPECTION</h3>
+        <p>Children below five years of age in the school were examined by nurses from Ga Central Municipal Health Directorate. Older students were taken through best health practices such as handwashing , brushing of teeth etc.</p>
+
+        <h3 class="mb-4">PENS AND PLASTICS</h3>
+        <p>Prima was selected as one of 27 schools selected from the Greater Accra Region by Pens and Plastics of North Industrial area to participate in their programme.</p>
+
+        <h3 class="mb-4">GA CENTRAL EXCELLENCE AWARD</h3>
+        <p>The school received an award for best performance category in the Ga Central Municipal Assembly the 2018 BECE result. Also Miss Rosemond Naa Kormeokor Abbey now at Holy Child Senior High School also received award for best performance in the 2018 BECE.</p>
+
+        <h3 class="mb-4">NADMO</h3>
+        <p>Officials from GA CENTRAL municipal directorate of NADMO were in the school to sensitized the children on good practices in avoiding disasters such as flood , fire and other forms of natural disasters.</p>
+
+        <h3 class="mb-4">RED CROSS SOCIETY</h3>
+        <p>Officials from the ‘Red Cross Society’ of Ghana were also here to educate the children on the kind of first aid to be given to victims of any injury. Currently, some of the students are having fortnight training on the first aids.</p>
+
+        <h3 class="mb-4">EXCURSION</h3>
+        <p>Due to technical issues at Ghana Railways, the planned excursion did not come. However, we are hopeful that things will rectified and the excursion will come on next term</p>
+
+        <h3 class="mb-4">GENERAL DRESS CODE</h3>
+        <p class="font-italic">The following dress code must be strictly adhered to by parents.</p>
         <ul class="list-styled mb-5">
-         <li>Digital Access to Scholarship at Smart</li>
-         <li>institutes</li>
-         <li>Smart-affiliated hospitals and research</li>
-         <li>Smart Catalyst</li>
-         <li>Smart Library Portal</li>
-         <li>Smart research programs and departments</li>
+         <li><span class="font-weight-bold">Mondays, Tuesday, Thursdays:</span>
+          Prescribed school uniform with white socks and black shoe to match.</li>
+         <li><span class="font-weight-bold">Wednesday</span>: Blue,  black jeans with Prima orange polo shirt and black shoes with white socks to match.<br>
+          Under special circumstance and permission from administration , long black skirts can be worn by older female students.</li>
+         <li><span class="font-weight-bold">Friday</span>: On Fridays, the Friday wear with an optional footwear (a pair of shoe , sandals or snickers) excluding the rubber footwear.</li>
         </ul>
+
+        <h3 class="mb-4">HAIRCUT</h3>
+        <p>All Prima school children must have a down cut devoid of any style, stylish marks or patterns. (eg .Galas ,Punk ,fading etc.) the female children can wear of plait corn roll aged and stud earring are prescribed for the female students across board. All children with unprescribed haircut will be sent home.</p>
+
+        <h3 class="mb-4">ACADEMIC INTERVENTION</h3>
+        <p>As part of efforts to raise academic standard and standardize academic performance, the school is putting in place Interventive measure to help students with academic challenges. This will be in the form of a one  hour after school special remedial. Parents of such students will be invited at the beginning of the term.</p>
+
+        <!--<h3 class="mb-4"></h3>
+        <p></p>-->
         <a href="#" class="btn btn-primary">Download</a>
        </div>
       </div>

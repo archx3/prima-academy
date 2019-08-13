@@ -13,10 +13,12 @@
        <span>{{phone}}</span>
       </a>-->
       <ul class="list-inline d-inline">
-       <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
-       <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-       <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-linkedin"></i></a></li>
-       <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
+       <li class="list-inline-item mx-0">
+        <a class="d-inline-block p-2 text-color" href="https://web.facebook.com/prima.aca"><i class="ti-facebook"></i></a>
+       </li>
+<!--       <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-twitter-alt"></i></a></li>-->
+<!--       <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-linkedin"></i></a></li>-->
+<!--       <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>-->
       </ul>
      </div>
      <div class="col-lg-8 text-center text-lg-right">
@@ -26,7 +28,7 @@
            data-target="#loginModal">login to Portal</a>
        </li>
        <li class="list-inline-item">
-        <a class="text-uppercase btn-primary text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal"
+        <a class="text-uppercase btn-primary text-color p-sm-2 py-2 px-0 d-inline-block" href="https://drive.google.com/uc?id=15sG8oVh3pbwgz2hh8C0xsG2BdJn3tQn2&export=download" data-toggle="modal"
            data-target="#signupModal">Enroll</a>
        </li>
       </ul>
@@ -62,6 +64,10 @@
             class="dropdown-item" :to="childLink.target">{{childLink.title}}</router-link>
         </div>
        </li>
+       <li v-for="(link, index) in extLinks" :key="index" class="nav-item"
+           :class="{active : activeLink === link.title}">
+        <a class="nav-link" :href="link.target">{{link.title}}</a>
+       </li>
       </ul>
      </div>
      </transition>
@@ -94,11 +100,11 @@ export default {
             },
             {
               title : 'Admin Structure',
-              target: '/admin-structure'
+              target: '/adminstructure'
             },
             {
               title : 'Management Team',
-              target: '/management-team'
+              target: '/management'
             }
           ]
         },
@@ -106,14 +112,10 @@ export default {
           title   : 'Information',
           target  : '#',
           children: [
-            {
+           /* {
               title : 'Class Timetables',
               target: '#'
-            },
-            {
-              title : 'Academic Calendar',
-              target: '#'
-            },
+            }, */
             {
               title : 'Events',
               target: '/events'
@@ -123,18 +125,24 @@ export default {
               target: '/newsletter'
             },
             {
+              title : 'Academic Calendar',
+              target: '/calendar'
+            },
+            /* {
               title : 'e School Report',
               target: '#'
-            },
+            }, */
           ]
-        },
-        {
-          title : 'Admissions',
-          target: 'admissions',
         },
         {
           title : 'Gallery',
           target: '/gallery',
+        },
+      ],
+      extLinks : [
+        {
+          title : 'Admissions',
+          target: 'https://drive.google.com/uc?id=15sG8oVh3pbwgz2hh8C0xsG2BdJn3tQn2&export=download',
         },
       ],
       activeLink : '',

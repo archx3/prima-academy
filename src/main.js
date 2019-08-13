@@ -17,8 +17,12 @@ import './assets/styles/scss/style.scss'
 import HeaderSection from './components/HeaderSection'
 import PageTitleSection from './components/PageTitleSection'
 import FooterSection from './components/FooterSection'
+import Loader        from "./components/Loader";
+import LazyImage        from "./components/LazyImage";
+import LazyBackground        from "./directives/LazyBackground";
 
 // custom directives
+Vue.directive('lazy-background', LazyBackground);
 Vue.directive('background', function (el, binding) {
   if (typeof binding.value === 'string') {
     el.style.backgroundImage =  `url(${binding.value})`;
@@ -51,10 +55,12 @@ const router = new VueRouter({
       return { x: 0, y: 0 }
     }
   },
-  mode  : 'history'
+  // mode  : 'history'
 })
 Vue.use(VueRouter);
 
+Vue.component('loader', Loader);
+Vue.component('lazy-image', LazyImage);
 Vue.component('header-section', HeaderSection)
 Vue.component('page-title-section', PageTitleSection)
 Vue.component('footer-section', FooterSection)

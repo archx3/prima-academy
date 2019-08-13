@@ -18,7 +18,7 @@
        <div class="card rounded-0 hover-shadow">
         <div class="card-img position-relative">
          <router-link :to="`/gallery/${i}/${gallerySet.name.toLocaleLowerCase()}`">
-          <img class="card-img-top rounded-0" :src="`/images/gallery/${gallerySet.dir_name}/${gallerySet.thumbnail}`"
+          <img class="card-img-top rounded-0" :src="`https://primaca.sirv.com/Images/${gallerySet.dir_name}/${gallerySet.thumbnail}`"
                alt="event thumb">
          </router-link>
          <!-- <div class="card-date"><span>18</span><br>December</div>-->

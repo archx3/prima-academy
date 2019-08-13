@@ -16,13 +16,14 @@
      <masonry
       :cols="{default: 4, '1000': 3, '700': 2, '400': 1}"
       :gutter="{default: '15', 700: '0'}">
-      <div v-for="(pic, i) in galleryData.pics" :key="i"
-           @click="setSelectedImage(pic)" class="col-lg-12 rounded-0 gallery-pic cur-ptr p-0 mb-3">
+      <div v-for="n in galleryData.pics" :key="n"
+           @click="setSelectedImage(n)" class="col-lg-12 rounded-0 gallery-pic cur-ptr p-0 mb-3">
        <div class="card rounded-0 hover-shadow">
         <div class="card-img position-relative"
              @mouseenter="mouseEnterHandler" @mouseleave="mouseOutHandler" @mousemove="mouseMoveHandler">
-         <img class="card-img-top rounded-0" :src="`/images/gallery/${galleryData.dir_name}/${pic.link}`"
-              alt="event thumb">
+         <lazy-image image-class="card-img-top rounded-0" style="min-height: 120px"
+                     :low-res-src="`https://primaca.sirv.com/Images/${galleryData.dir_name}/${n}.jpg?q=16`"
+                     :src="`https://primaca.sirv.com/Images/${galleryData.dir_name}/${n}.jpg`"/>
          <div class="card-img-overlay justify-content-center">
           <!--          <i class="ti-plus feature-icon"></i>-->
          </div>
@@ -32,13 +33,12 @@
      </masonry>
      <!-- event -->
      <!--<template v-if="galleryData !== undefined">
-
      </template>-->
     </div>
    </div>
   </section>
   <!-- /courses -->
-  <light-box :gallery-data="galleryData" :sub-dir="galleryData.dir_name" :image-name-prop="'link'"
+  <light-box :gallery-data="galleryData" :sub-dir="galleryData.dir_name" :image-name-prop="'raw'"
              :selected-image="selectedImage" v-on:setSelected="setSelectedImage($event)"/>
   <!--footer-->
   <footer-section :class="{blur : selectedImage}"/>
@@ -85,6 +85,7 @@ export default {
   },
   methods   : {
     setSelectedImage (image) {
+      console.log(image);
       this.selectedImage = image
     },
     mouseMoveHandler (e) {

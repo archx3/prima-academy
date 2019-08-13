@@ -1,5 +1,10 @@
 <template>
- <section class="page-title-section overlay" :style="{paddingTop: paddingTop + 'px'}" v-background="background" >
+ <section class="page-title-section overlay" :style="{paddingTop: paddingTop + 'px'}"
+          v-lazy-background="{
+        blur : true,
+        lowResSrc : `${background}?q=3`,
+        highResSrc : `${background}`,
+        }">
   <div class="container">
    <div class="row">
     <div class="col-md-8">
@@ -24,7 +29,7 @@ export default {
       // default: this.$route
     },
     background : {
-      default : '/images/backgrounds/page-title.jpg'
+      default : 'https://primaca.sirv.com/Images/about/about-page-n.png'
     },
     pageTitle : {},
     pageSubTitle : {},
