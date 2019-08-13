@@ -97,7 +97,7 @@
    <div class="container-fluid p-0">
     <div class="row no-gutters">
      <div class="col-xl-4 col-lg-5 align-self-end">
-      <img class="img-fluid w-100" src="/images/banner/grad-model.png" alt="banner-feature">
+      <img class="img-fluid w-100" src="https://primaca.sirv.com/Images/banner/grad-model.png" alt="banner-feature">
      </div>
      <div class="col-xl-8 col-lg-7">
       <div class="row feature-blocks bg-gray justify-content-between">

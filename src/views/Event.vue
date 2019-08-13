@@ -5,7 +5,7 @@
   <!-- /header -->
   <!-- page title -->
 
-  <page-title-section :page-title="pageTitle" :page-sub-title="eventName" :url="'/events'" :background="'/images/about/about-page-n.png'"/>
+  <page-title-section :page-title="pageTitle" :page-sub-title="eventName" :url="'/events'" :background="'https://primaca.sirv.com/Images/about/about-page-n.png'"/>
   <!-- /page title -->
   <!-- event single -->
   <section class="section-sm">

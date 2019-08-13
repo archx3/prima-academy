@@ -4,7 +4,7 @@
   <header-section :title="pageTitle"/>
   <!-- /header -->
   <!-- page title -->
-  <page-title-section :page-title="pageTitle" :url="this.$route" :background="'/images/about/about-page-n.png'"/>
+  <page-title-section :page-title="pageTitle" :url="this.$route" :background="'https://primaca.sirv.com/Images/about/about-page-n.png'"/>
   <!-- /page title -->
 
   <!-- notice details -->
