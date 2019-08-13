@@ -17,7 +17,7 @@
      <div class="card p-0 border-primary rounded-0 hover-shadow">
 
       <div class="icon overflow-hidden bg-cover" style="height: 150px"
-           v-background="`/images/gallery/ch/${section.pic}`">
+           v-background="`https://primaca.sirv.com/Images/ch/${section.pic}`">
        <!-- <span class="ti-user"></span>-->
       </div>
       <div class="card-body">
