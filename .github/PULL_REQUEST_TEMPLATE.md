@@ -1,6 +1,6 @@
 <!--
 Please make sure to read the Pull Request Guidelines:
-https://github.com/js-camp/js-camp-website/blob/master/.github/CONTRIBUTING.md#pull-request-guidelines
+https://github.com/archx3/prima-academy/blob/master/.github/CONTRIBUTING.md#pull-request-guidelines
 -->
 
 <!-- PULL REQUEST TEMPLATE -->
