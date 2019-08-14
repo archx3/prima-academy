@@ -87,11 +87,12 @@
      <div v-for="(event, i) of past" :key="i" class="col-lg-4 col-sm-6 mb-5">
       <div class="card border-0 rounded-0 hover-shadow">
        <div class="card-img position-relative">
-        <img class="card-img-top rounded-0" :src="`/images/${event.image}`" alt="event thumb">
+        <img class="card-img-top rounded-0" :src="`${event.image}`" alt="event thumb">
         <div v-if="event.startDate" class="card-date">
          <span>{{event.startDate.day}}</span><br>
          {{event.startDate.month}}<br>
-         {{event.startDate.year}}</div>
+         {{event.startDate.year}}
+        </div>
        </div>
        <div class="card-body">
         <!-- location -->
@@ -124,7 +125,7 @@ export default {
     }
   },
   computed  : {
-    ...mapGetters('events', { today : 'today',  upcoming : 'upcoming',  past : 'past'  }),
+    ...mapGetters('events', { today : 'today',  upcoming : 'upcoming',  past : 'past' }),
   },
   methods   : {}
 }

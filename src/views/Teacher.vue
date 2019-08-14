@@ -10,7 +10,9 @@
     <div class="row">
      <div class="col-md-8">
       <ul class="list-inline custom-breadcrumb">
-       <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="teacher.html">Our Teacher</a></li>
+       <li class="list-inline-item">
+        <a class="h2 text-primary font-secondary" href="#">Our Teacher</a>
+       </li>
        <li class="list-inline-item text-white h3 font-secondary nasted">John Doe</li>
       </ul>
       <p class="text-lighten">Our courses offer a good compromise between the continuous assessment and the emphasis placed on final

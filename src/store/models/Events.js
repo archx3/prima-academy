@@ -20,7 +20,7 @@ export default {
         theme    : 'Instilling integrity in the education process; the hope for a corruption-free tomorrow',
         startTime: '10 am',
         endTime  : '',
-        image : 'gallery/g-2017/24.jpg',
+        image : 'https://primaca.sirv.com/Images/g-2017/24.jpg',
         fee : '',
         speakers : [],
         description : [
@@ -60,7 +60,7 @@ export default {
         theme    : '',
         startTime: '',
         endTime  : '',
-        image : 'gallery/ch/14.jpg',
+        image : 'https://primaca.sirv.com/Images/ch/14.jpg',
         fee : '60.00',
         speakers : [],
         description : [
@@ -77,21 +77,6 @@ export default {
             ]
           }
         ]
-      },
-      {
-        name     : 'Speech and Prize Giving day 2018',
-        startDate     :  { day : '30', month : 'March', year : '2018' },
-        venue    : 'School Premises',
-        theme    : '',
-        startTime: '2:00 pm',
-        endTime  : '6:00 pm',
-        image : '',
-        fee : '5',
-        speakers : [
-          { name : 'Mr Ahoma', position : 'Teacher' },
-          { name : 'Mr Ahoma', position : 'Teacher' },
-          { name : 'Mr Ahoma', position : 'Teacher' },
-        ],
       },
     ],
     pastEvents : [],

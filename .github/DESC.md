@@ -1,1 +1,1 @@
-JS Camp
+Prima Academy Website
