@@ -16,7 +16,7 @@
      </div>
      <!-- event image -->
      <div v-if="events[id].image" class="col-12 mb-4">
-      <img :src="`/images/${events[id].image}`" alt="event thumb" class="img-fluid w-100">
+      <img :src="`${events[id].image}?cy=250&ch=447`" alt="event thumb" class="img-fluid w-100">
      </div>
     </div>
     <!-- event info -->
@@ -32,21 +32,12 @@
          </div>
         </div>
        </li>
-       <li v-if="events[id].date" class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
-        <div class="d-flex align-items-center">
-         <i class="ti-calendar text-primary icon-md mr-2"></i>
-         <div class="text-left">
-          <p class="mb-0">DATE</p>
-          <h6 class="mb-0">{{events[id].date.day}}-{{events[id].date.month}}-{{events[id].date.year}}</h6>
-         </div>
-        </div>
-       </li>
        <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
         <div class="d-flex align-items-center">
          <i class="ti-calendar text-primary icon-md mr-2"></i>
          <div class="text-left">
           <p class="mb-0">STARTS </p>
-          <h6 class="mb-0">{{events[id].startDate.get('day')}}-{{events[id].startDate.get('month')}}-{{events[id].startDate.get('year')}}</h6>
+          <h6 class="mb-0">{{events[id].startDate.day}}-{{events[id].startDate.month}}-{{events[id].startDate.year}}</h6>
          </div>
         </div>
        </li>
@@ -106,7 +97,7 @@
      <!-- speakers -->
      <div v-for="(speaker, i) of events[id].speakers" :key="i" class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
       <div class="media">
-       <img class="mr-3 img-fluid" src="images/event-speakers/speaker-1.jpg" alt="speaker">
+       <img class="mr-3 img-fluid" :src="`${event[id].image}`" alt="speaker">
        <div class="media-body">
         <h4 class="mt-0">{{speaker.name}}</h4>
         {{speaker.position}}
@@ -136,16 +127,16 @@
       <div v-for="(n, i) in 3" :key="i" class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
        <div class="card border-0 rounded-0 hover-shadow">
         <div class="card-img position-relative">
-         <img class="card-img-top rounded-0" src="images/events/event-1.jpg" alt="event thumb">
+         <img class="card-img-top rounded-0" :src="`${pastEvents[i].image}`" alt="event thumb">
          <div class="card-date">
-          <span>{{pastEvents[i].date.day}}</span><br>
-          {{pastEvents[i].date.month}}-{{pastEvents[i].date.year}}
+          <span>{{pastEvents[i].startDate.day}}</span><br>
+          {{pastEvents[i].startDate.month}}-{{pastEvents[i].startDate.year}}
          </div>
         </div>
         <div class="card-body">
          <!-- location -->
          <p><i class="ti-location-pin text-primary mr-2"></i>{{pastEvents[i].venue}}</p>
-         <a href="event-single.html"><h4 class="card-title">{{pastEvents[i].name}}</h4></a>
+         <a href="#"><h4 class="card-title">{{pastEvents[i].name}}</h4></a>
         </div>
        </div>
       </div>
@@ -154,10 +145,10 @@
       <div v-for="(n, i) in pastEvents.length" :key="i" class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
        <div class="card border-0 rounded-0 hover-shadow">
         <div class="card-img position-relative">
-         <img class="card-img-top rounded-0" src="/images/events/event-1.jpg" alt="event thumb">
+         <img class="card-img-top rounded-0" :src="`${pastEvents[i].image}`" alt="event thumb">
          <div class="card-date">
-          <span>{{pastEvents[i].date.day}}</span><br>
-          {{pastEvents[i].date.month}}-{{pastEvents[i].date.year}}
+          <span>{{pastEvents[i].startDate.day}}</span><br>
+          {{pastEvents[i].startDate.month}}-{{pastEvents[i].startDate.year}}
          </div>
         </div>
         <div class="card-body">
@@ -193,8 +184,7 @@ export default {
   },
   methods   : {},
   computed  : {
-    ...mapGetters('events', { events: 'events', pastEvents: 'pastEvents' }),
-    ...mapGetters('events', { pastEvents: 'pastEvents' }),
+    ...mapGetters('events', { events: 'events', pastEvents: 'past' }),
     eventName () {
       return this.events[this.id].name
     }

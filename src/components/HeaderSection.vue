@@ -64,7 +64,7 @@
             class="dropdown-item" :to="childLink.target">{{childLink.title}}</router-link>
         </div>
        </li>
-       <li v-for="(link, index) in extLinks" :key="index" class="nav-item"
+       <li v-for="(link, index) in extLinks" :key="link.title + index" class="nav-item"
            :class="{active : activeLink === link.title}">
         <a class="nav-link" :href="link.target">{{link.title}}</a>
        </li>
