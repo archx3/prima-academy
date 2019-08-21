@@ -16,7 +16,7 @@
              <div v-for="(member, index) in management" :key="index" data-ref="mixitup-target"
                   class="col-lg-4 col-sm-6 mb-5 staff">
                 <div class="card rounded-0 hover-shadow">
-                   <img class="card-img-top rounded-0" :src="`/images/gallery/management-team/${member.pic}`" alt="teacher">
+                   <img class="card-img-top rounded-0" :src="`https://primaca.sirv.com/Images/management-team//${member.pic}`" alt="teacher">
                    <div class="card-body">
                       <router-link v-if="member.bio" :to="`/staff/${index}`">
                          <h4 class="card-title mb-0">{{member.name}}</h4>
